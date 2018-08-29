@@ -1,14 +1,12 @@
 
 public class PrintingLikeABoss {
 	public static void main(String[] args) {
-		printTriangle(5);
-		System.out.println("--------------");
-		xmasTree(12);
+//		printTriangle(5);
+		xmasTree(25);
 	}
 
 	private static void printWhitespaces(int size) {
 		int counter = 0;
-
 		while (counter < size) {
 			System.out.print(" ");
 			counter++;
@@ -17,7 +15,6 @@ public class PrintingLikeABoss {
 
 	private static void printStars(int size) {
 		int counter = 0;
-
 		while (counter < size) {
 			System.out.print("*");
 			counter++;
@@ -26,7 +23,6 @@ public class PrintingLikeABoss {
 
 	private static void printTriangle(int size) {
 		int counter = 0;
-
 		while (counter < size) {
 			printWhitespaces(size - counter - 1);
 			printStars(counter + 1);
@@ -37,7 +33,6 @@ public class PrintingLikeABoss {
 
 	private static void xmasTree(int height) {
 		int counter = 0;
-
 		while (counter < height - 2) {
 			printWhitespaces(height - counter - 3);
 			printStars(counter);
@@ -46,7 +41,6 @@ public class PrintingLikeABoss {
 			System.out.println();
 			counter++;
 		}
-
 		printTreeTrunk(height);
 	}
 
