@@ -1,27 +1,35 @@
+import java.util.Scanner;
+
 public class Main {
 	public static void main(String[] args) {
-		LyyraCard cardPekka = new LyyraCard(20);
-		LyyraCard cardBrian = new LyyraCard(30);
+		Scanner reader = new Scanner(System.in);
+		NumberStatistics allNumbers = new NumberStatistics();
+		NumberStatistics oddNumbers = new NumberStatistics();
+		NumberStatistics evenNumbers = new NumberStatistics();
 
-		cardPekka.payGourmet();
-		cardBrian.payEconomical();
+		System.out.println("Type numbers: ");
 
-		System.out.println("Pekka:" + cardPekka.toString());
-		System.out.println("Brian:" + cardBrian.toString());
-		
-		cardPekka.loadMoney(20);
-		cardBrian.payGourmet();
-		
-		System.out.println("Pekka:" + cardPekka.toString());
-		System.out.println("Brian:" + cardBrian.toString());
-		
-		cardPekka.payEconomical();
-		cardPekka.payEconomical();
-		
-		cardBrian.loadMoney(50);
-		
-		System.out.println("Pekka:" + cardPekka.toString());
-		System.out.println("Brian:" + cardBrian.toString());
+		while (true) {
+			int read = Integer.parseInt(reader.nextLine());
+			if (read == -1) {
+				break;
+			} else
 
+			{
+				allNumbers.addNumber(read);
+
+				if (read % 2 == 0) {
+					oddNumbers.addNumber(read);
+				} else {
+					evenNumbers.addNumber(read);
+				}
+			}
+		}
+
+		System.out.println("sum: " + allNumbers.sum());
+		System.out.println("sum of even: " + evenNumbers.sum());
+		System.out.println("sum of odd: " + oddNumbers.sum());
+
+		reader.close();
 	}
 }

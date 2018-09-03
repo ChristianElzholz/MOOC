@@ -15,8 +15,9 @@ public class Product {
 	}
 
 	public static void main(String[] args) {
+
 		Product banana = new Product("banana", 1.1, 13);
-		
+
 		banana.print();
 	}
 }
